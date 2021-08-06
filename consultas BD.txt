@@ -1,0 +1,19 @@
+SELECT i.is is_indbound, unidades,i.fecha_agendada, origen,estado, r.is is_recibo, s.is is_stage, s.mesa
+FROM indbound i left join recibo r on i.is = r.is left join stage s on r.is = s.is
+
+CREATE TABLE pallets(
+    id int NOT NULL AUTO_INCREMENT,
+    is char(15) NOT NULL,
+    temperaturaminima TINYINT,
+    KEY (identificadorestacion),
+    FOREIGN KEY (identificadorestacion)
+    REFERENCES estacion(identificador)
+    ON DELETE NO ACTION
+    ON UPDATE CASCADE
+    ) ENGINE=InnoDB;
+
+id,
+is,
+pallets
+
+
